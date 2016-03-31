@@ -1,0 +1,23 @@
+package edu.towson.cis.cosc442.project4.coffeemaker;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
+import junit.framework.TestCase;
+
+import static org.junit.Assert.*;
+
+public class InventoryTest {
+	private Inventory inv;
+	
+	public void setUp() {
+		inv = new Inventory();
+	}
+	
+	public void testSetChocolate() {
+		int chocolate = 1;
+		inv.setChocolate(chocolate);
+	}
+}

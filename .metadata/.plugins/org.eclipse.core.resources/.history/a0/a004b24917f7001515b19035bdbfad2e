@@ -1,0 +1,25 @@
+package edu.towson.cis.cosc442.project4.coffeemaker;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
+import junit.framework.TestCase;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RecipeTest extends TestCase{
+	private Recipe r;
+
+	public void setUp() {
+		r = new Recipe();
+	}
+
+	public void testSetAmtChocolate1() {
+		int chocolate = -1;
+		r.setAmtChocolate(chocolate);
+	}
+}
