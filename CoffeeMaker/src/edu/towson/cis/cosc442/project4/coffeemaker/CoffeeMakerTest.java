@@ -1,6 +1,7 @@
 package edu.towson.cis.cosc442.project4.coffeemaker;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
