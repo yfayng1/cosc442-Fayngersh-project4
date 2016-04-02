@@ -26,7 +26,7 @@ public class CoffeeMakerTest extends TestCase {
 		r1.setAmtCoffee(6);
 		r1.setAmtMilk(1);
 		r1.setAmtSugar(1);
-		r1.setAmtChocolate(0);
+		r1.setAmtChocolate(1);
 		
 		r2 = new Recipe();
 		r2.setName("Frap");
@@ -90,6 +90,9 @@ public class CoffeeMakerTest extends TestCase {
 		assertFalse(cm.deleteRecipe(null));
 	}
 	
+	public void testDeleteRecipe3() {
+		assertFalse(cm.deleteRecipe(r1));
+	}
 	//Successfully editing a recipe
 	public void testEditRecipe1() {
 		cm.addRecipe(r1);
@@ -116,6 +119,10 @@ public class CoffeeMakerTest extends TestCase {
 		int amtPaid = 50;
 		int result = cm.makeCoffee(r1, amtPaid);
 		assertEquals(0, result);
+		assertEquals(i.getCoffee(),9);
+		assertEquals(i.getMilk(),14);
+		assertEquals(i.getSugar(),14);
+		assertEquals(i.getChocolate(),14);
 	}
 	
 	//Unsuccessfully making coffee due to insufficient funds
@@ -143,6 +150,10 @@ public class CoffeeMakerTest extends TestCase {
 
 		boolean result = cm.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
 		assertEquals(true, result);
+		assertEquals(i.getCoffee(),16);
+		assertEquals(i.getMilk(),16);
+		assertEquals(i.getSugar(),16);
+		assertEquals(i.getChocolate(),16);
 	}
 	
 	//Unsuccessfully adding to inventory due to amtCoffee being negative
@@ -250,5 +261,7 @@ public class CoffeeMakerTest extends TestCase {
 		Recipe result = cm.getRecipeForName(name);
 		
 		assertNotNull(result);
+		assertNotEquals(null, result.toString());
+		assertNotEquals(null, result.getName());
 	}
 }

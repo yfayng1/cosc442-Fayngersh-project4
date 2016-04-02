@@ -20,23 +20,27 @@ public class InventoryTest extends TestCase {
 	public void testSetChocolate1() {
 		int chocolate = -1;
 		inv.setChocolate(chocolate);
+		assertEquals(inv.getChocolate(), 0);
 	}
-	
+
 	//Setting coffee to 0 with a negative input
 	public void testSetCoffee1() {
 		int coffee = -1;
 		inv.setCoffee(coffee);
+		assertEquals(inv.getCoffee(), 0);
 	}
 	
 	//Setting milk to 0 with a negative input
 	public void testSetMilk1() {
 		int milk = -1;
 		inv.setMilk(milk);
+		assertEquals(inv.getMilk(), 0);
 	}
 	
 	//Setting sugar to 0 with a negative input
 	public void testSetSugar1() {
 		int sugar = -1;
 		inv.setSugar(sugar);
+		assertEquals(inv.getSugar(), 0);
 	}
 }

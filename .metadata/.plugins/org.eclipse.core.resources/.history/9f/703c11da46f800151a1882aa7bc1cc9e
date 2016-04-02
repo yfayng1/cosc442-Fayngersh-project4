@@ -1,0 +1,60 @@
+package edu.towson.cis.cosc442.project4.coffeemaker;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
+import junit.framework.TestCase;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RecipeTest extends TestCase{
+	private Recipe r,r1;
+
+	public void setUp() {
+		r = new Recipe();
+		r1 = new Recipe();
+	}
+	
+	//Setting chocolate to 0 with a negative input
+	public void testSetAmtChocolate1() {
+		int chocolate = -1;
+		r.setAmtChocolate(chocolate);
+		assertEquals(r.getAmtChocolate(), 0);
+	}
+			
+	//Setting coffee to 0 with a negative input
+	public void testSetAmtCoffee1() {
+		int coffee = -1;
+		r.setAmtCoffee(coffee);
+		assertEquals(r.getAmtCoffee(), 0);
+	}
+	
+	//Setting milk to 0 with a negative input
+	public void testSetAmtMilk1() {
+		int milk = -1;
+		r.setAmtMilk(milk);
+		assertEquals(r.getAmtMilk(), 0);
+	}
+	
+	//Setting sugar to 0 with a negative input
+	public void testSetAmtSugar1() {
+		int sugar = -1;
+		r.setAmtSugar(sugar);
+		assertEquals(r.getAmtSugar(), 0);
+	}
+	
+	//Setting price to 0 with a negative input
+	public void testPrice1() {
+		int price = -1;
+		r.setPrice(price);
+		assertEquals(r.getPrice(), 0);
+	}
+	
+	public void testEquals1() {
+		r.setName("Coffee");
+		assertFalse(r1.equals(r));
+	}
+}
